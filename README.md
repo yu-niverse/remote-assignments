@@ -29,7 +29,7 @@
    - Asynchronous Result <br/>
         <img src="imgs/Assignment3_async_result.png" alt="image" width="800" height="auto">
     
-2. The key difference between synchronous and asynchronous functions is that synchronous functions execute in sequence so it spends more time processing the three requests, while asynchronous functions can process in parallel resulting in shorter execution time.
+2. The key difference between synchronous and asynchronous functions is that synchronous functions execute in sequence so it spends more time waiting for previous requests to finish, while asynchronous functions can process in parallel resulting in shorter execution time.
    
 3. Asynchrounous functions are useful when a program needs to process many tasks at the same time. For example, it needs to request data from different routes, perform some post-processing to the data and receive inputs from the user. If we use asynchronous functions, the user experience would be better.
    
@@ -41,7 +41,7 @@
     | Promise       | - Chain async operations in a more readable way <br/> - Built-in error handling with catch           | - The implementing details are more complex                                        |
     | Async & Await | - More readable and concise compared to the other two <br/> - Built-in error handling with try-catch | - Only supported in modern environments                                            |
 
-5. Observations : After comparing the three methods, I found out that there is a tradeoff between simplicity and readability. In other words, the callback method is more easy to understand and execute but tends to be hard to read when the program gets more complicated. On the contrary, promise and async & await method are more compex and harder to understand, while providing better readibility.
+5. Observations : After comparing the three methods, I found out that there is a tradeoff between conceptsimplicity and readability. In other words, the callback method is more easy to understand and execute but tends to be harder to read when the program gets more complicated. On the contrary, promise and async & await methods' concept are more compex and harder to understand, while providing better code readibility.
 
 ## Environment Requirements
 Below is the environment I'm using : 
