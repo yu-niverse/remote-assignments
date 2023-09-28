@@ -44,9 +44,8 @@
 Below is the environment I'm using : 
 - Node.js v18.17.1
 ## How to Use
-Run requestSync.js and requestAsync.js with the following commands :
-
-    ```
-    time node requestSync.js
-    time node requestAsync.js
-    ```
+Run `requestSync.js` and `requestAsync.js` with the following commands :
+```
+time node requestSync.js
+time node requestAsync.js
+```
