@@ -10,11 +10,11 @@
     I also tested the connection via dbeaver, below are the screenshots : <br/>
 
     - connection from ec2<br/>
-        <img src="imgs/Assignment1_ec2_conn.png" alt="image" width="750" height="auto">
+        <img src="week1/imgs/Assignment1_ec2_conn.png" alt="image" width="750" height="auto">
     - connection from local<br/>
-        <img src="imgs/Assignment1_local_conn.png" alt="image" width="750" height="auto"> <br/>
+        <img src="week1/imgs/Assignment1_local_conn.png" alt="image" width="750" height="auto"> <br/>
         
-        <img src="imgs/Assignment1_dbeaver.png" alt="image" width="500" height="auto">
+        <img src="week1/imgs/Assignment1_dbeaver.png" alt="image" width="500" height="auto">
 
 
 
@@ -25,9 +25,9 @@
 ### Assignment 3 - Observations
 1. Below are the screenshots in step 4 respectively :
    - Synchronous Result <br/>
-        <img src="imgs/Assignment3_sync_result.png" alt="image" width="800" height="auto">
+        <img src="week1/imgs/Assignment3_sync_result.png" alt="image" width="800" height="auto">
    - Asynchronous Result <br/>
-        <img src="imgs/Assignment3_async_result.png" alt="image" width="800" height="auto">
+        <img src="week1/imgs/Assignment3_async_result.png" alt="image" width="800" height="auto">
     
 2. The key difference between synchronous and asynchronous functions is that synchronous functions execute in sequence so it spends more time waiting for previous requests to finish, while asynchronous functions can process in parallel resulting in shorter execution time.
    
