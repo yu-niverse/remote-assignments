@@ -9,8 +9,8 @@ const app = express()
 const port = process.env.PORT
 
 // Middleware
-app.use(express.json());
 app.use((req, res, next) => {
+  express.json()
   req.conn = conn;
   console.log(req.method, req.url)
   next()
