@@ -26,7 +26,12 @@
     ```
     so that I can ensure that my app would not shut down even if the ssh connection exits.
 
-5. 
+5.  The client sends a request to the public ip of the EC2 instance (app server). The firewall contains some inbound rules and outbound rules to see if the client can access the instance. When processing the request, the app server interacts with RDS to retreive or store data. See the diagram below : <br/><br/>
+   <img src="imgs/interaction.jpg" alt="image" width="600" height="auto">
+
+6.  My app listen to port 80, so that my client don't need to specify the port number.
+   
+7.  The web server delivers static web content in response to an HTTP request, while the application server can generate and deliver dynamic content related to business logic.
 
 ## Environment Requirements
 Below is the environment I'm using : 
