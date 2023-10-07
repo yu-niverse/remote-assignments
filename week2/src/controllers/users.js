@@ -59,22 +59,22 @@ export const addUser = async (req, res) => {
             if (rows.length > 0) {
                 return res.status(409).json({ error: 'Email already exists' })
             }
-        });
-        // store user into mysql database
-        query = 'INSERT INTO user (name, email, password, created_at) VALUES (?, ?, MD5(?), CURRENT_TIMESTAMP)'
-        db.query(query, [name, email, password], function(err, rows) {
-            if (err) throw err;
-            // response
-            res.status(200).json({ 
-                data: {
-                    user : {
-                        id: rows.insertId,
-                        name: name,
-                        email: email
-                    },
-                    'request-date': req.requestDate
-                }
-            })
+            // insert user into database
+            query = 'INSERT INTO user (name, email, password, created_at) VALUES (?, ?, MD5(?), CURRENT_TIMESTAMP)'
+            db.query(query, [name, email, password], function(err, rows) {
+                if (err) throw err;
+                // response
+                res.status(200).json({ 
+                    data: {
+                        user : {
+                            id: rows.insertId,
+                            name: name,
+                            email: email
+                        },
+                        'request-date': req.requestDate
+                    }
+                })
+            });
         });
     }
     catch (err) {
