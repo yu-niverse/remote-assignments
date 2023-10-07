@@ -1,4 +1,5 @@
 import express from 'express'
+import { checkRequestDate } from '../utils/validate.js'
 import { addUser, getUser} from '../controllers/users.js'
 
 const router = express.Router()
@@ -9,6 +10,8 @@ router.get('/healthcheck', (req, res) => {
 })
 
 // Users API
+router.use(checkRequestDate)
+router.use(express.json())
 router.get('/users/:id', getUser)
 router.post('/users', addUser)
 

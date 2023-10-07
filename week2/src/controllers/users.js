@@ -1,6 +1,5 @@
 export const getUser = async (req, res) => {
     try {
-        const requestDate = req.headers['request-date'];
         const id = parseInt(req.params.id);
         // check if id is valid
         if (isNaN(id)) {
@@ -21,7 +20,7 @@ export const getUser = async (req, res) => {
                         name: rows[0].name,
                         email: rows[0].email
                     },
-                    'request-date': requestDate
+                    'request-date': req.requestDate
                 }
             })
         });
@@ -34,7 +33,6 @@ export const getUser = async (req, res) => {
 
 export const addUser = async (req, res) => {
     try {
-        const requestDate = req.headers['request-date'];
         const { name, email, password } = req.body
         // check for required fields
         if (!name || !email || !password) {
@@ -74,7 +72,7 @@ export const addUser = async (req, res) => {
                         name: name,
                         email: email
                     },
-                    'request-date': requestDate
+                    'request-date': req.requestDate
                 }
             })
         });
