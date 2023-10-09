@@ -6,11 +6,11 @@
    
    ```sql
    CREATE TABLE user (
-        id           INT          AUTO_INCREMENT PRIMARY KEY,
-        name         VARCHAR(45)  NOT NULL,
-        email        VARCHAR(45)  NOT NULL UNIQUE,
-        password     VARCHAR(45)  NOT NULL,
-        created_at   TIMESTAMP    NOT NULL
+        id           INT           AUTO_INCREMENT PRIMARY KEY,
+        name         VARCHAR(45)   NOT NULL,
+        email        VARCHAR(45)   NOT NULL UNIQUE,
+        password     VARCHAR(100)  NOT NULL,
+        created_at   TIMESTAMP     NOT NULL
    );
    ```
     I used auto incremented id to be the primary key and set a unique constraint on field, email, so that the email for different users would not be the same.
