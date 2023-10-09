@@ -1,7 +1,6 @@
 import express from 'express'
 import dotenv from 'dotenv'
-import conn from './src/db/mysql/index.js'
-import router from './src/routes/users.js'
+import user from './src/views/user.js'
 
 dotenv.config()
 
@@ -10,13 +9,16 @@ const port = process.env.PORT
 
 // Middleware
 app.use((req, res, next) => {
-  req.conn = conn;
+  // log each request to the console
   console.log(req.method, req.url)
   next()
 });
 
 // Routes
-app.use('', router);
+app.get('/healthcheck', (req, res) => {
+  res.send('Healthcheck OK!')
+})
+app.use(user)
 
 // Start server
 app.listen(port, () => {

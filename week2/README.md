@@ -6,16 +6,26 @@
    
    ```sql
    CREATE TABLE user (
-        id           INT          AUTO_INCREMENT PRIMARY KEY,
-        name         VARCHAR(45)  NOT NULL,
-        email        VARCHAR(45)  NOT NULL UNIQUE,
-        password     VARCHAR(45)  NOT NULL,
-        created_at   TIMESTAMP    NOT NULL
+        id           INT           AUTO_INCREMENT PRIMARY KEY,
+        name         VARCHAR(45)   NOT NULL,
+        email        VARCHAR(45)   NOT NULL UNIQUE,
+        password     VARCHAR(100)  NOT NULL,
+        created_at   TIMESTAMP     NOT NULL
    );
    ```
     I used auto incremented id to be the primary key and set a unique constraint on field, email, so that the email for different users would not be the same.
 
 2. HTTP status code tells the client about the status of the request's result, for example, it might be successful, failed due to server errors or the client is unauthorized. While it is technically possible to not use status codes in our response, but it is highly recommended to use to help developers handle the responses properly.
+
+    Different status codes have different meanings, for example :
+
+    | Code Group | Meaning                |
+    | ---------- | ---------------------- |
+    | 1xx        | informational response |
+    | 2xx        | success                |
+    | 3xx        | redirection            |
+    | 4xx        | client errors          |
+    | 5xx        | server errors          |
    
 3.  I test my APIs with the Postman application. I added a collection of the APIs in this assignment and declared some environment variables like local_ip and ec2_ip to help me test the same routes under different environments.
 
