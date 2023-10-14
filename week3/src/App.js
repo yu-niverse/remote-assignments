@@ -5,6 +5,9 @@ import Button from '@mui/material/Button';
 import './App.css';
 
 function App() {
+
+  const api_ip = '3.105.119.250';
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -23,25 +26,34 @@ function App() {
       method: 'POST',
       headers: { 
         'Content-Type': 'application/json',
-        // the date is in the format: Sat, 14 Oct 2023 12:39:52 GMT
         'Request-Date': new Date().toUTCString(),
       },
       body: JSON.stringify(formData)
     };
     console.log(formData);
 
-    fetch('http://3.105.119.250/users', request)
-      .then((res) => res.json())
+    fetch('http://' + api_ip + '/users', request)
+      .then((res) => {
+        if (res.status === 201) {
+          return res.json();
+        } else {
+          return res.json().then((data) => {
+            throw new Error(data.error);
+          });
+        }
+      })
       .then((data) => {
         console.log(data);
-        alert('Sign Up Success');
         setFormData({
           name: '',
           email: '',
           password: '',
         });
+        alert(JSON.stringify(data.data.user)); 
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        alert(err);
+      });
   };
 
   return (
