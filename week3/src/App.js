@@ -18,8 +18,30 @@ function App() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // You can add form validation and submit logic here
+
+    const request = {
+      method: 'POST',
+      headers: { 
+        'Content-Type': 'application/json',
+        // the date is in the format: Sat, 14 Oct 2023 12:39:52 GMT
+        'Request-Date': new Date().toUTCString(),
+      },
+      body: JSON.stringify(formData)
+    };
     console.log(formData);
+
+    fetch('http://3.105.119.250/users', request)
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        alert('Sign Up Success');
+        setFormData({
+          name: '',
+          email: '',
+          password: '',
+        });
+      })
+      .catch((err) => console.log(err));
   };
 
   return (
