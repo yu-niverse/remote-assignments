@@ -32,14 +32,13 @@ function App() {
     };
     console.log(formData);
 
-    fetch('http://' + api_ip + '/users', request)
-      .then((res) => {
+    fetch('http://' + api_ip + '/api/users', request)
+      .then(async (res) => {
         if (res.status === 201) {
           return res.json();
         } else {
-          return res.json().then((data) => {
-            throw new Error(data.error);
-          });
+          const data = await res.json();
+          throw new Error(data.error);
         }
       })
       .then((data) => {
